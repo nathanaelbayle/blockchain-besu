@@ -1999,3 +1999,5 @@ rocksdb.num.sst.read.per.level P50 : 0,000000 P95 : 0,000000 P99 : 0,000000 P100
 2021/10/30-12:57:14.068916 7ff2d4ff9700 [/db_impl/db_impl.cc:747] ------- PERSISTING STATS -------
 2021/10/30-12:57:14.068933 7ff2d4ff9700 [/db_impl/db_impl.cc:816] [Pre-GC] In-memory stats history size: 48 bytes, slice count: 0
 2021/10/30-12:57:14.068935 7ff2d4ff9700 [/db_impl/db_impl.cc:825] [Post-GC] In-memory stats history size: 48 bytes, slice count: 0
+2021/10/30-13:05:50.633292 7ff2d43f6700 [/db_impl/db_impl.cc:447] Shutdown: canceling all background work
+2021/10/30-13:05:50.634261 7ff2d43f6700 [/db_impl/db_impl.cc:625] Shutdown complete

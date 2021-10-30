@@ -2560,3 +2560,5 @@ rocksdb.num.sst.read.per.level P50 : 0,000000 P95 : 0,000000 P99 : 0,000000 P100
 2021/10/30-13:03:17.579241 7f11817fa700 [/db_impl/db_impl.cc:803] Storing 159 stats with timestamp 1635591797 to in-memory stats history
 2021/10/30-13:03:17.579269 7f11817fa700 [/db_impl/db_impl.cc:816] [Pre-GC] In-memory stats history size: 7430 bytes, slice count: 1
 2021/10/30-13:03:17.579270 7f11817fa700 [/db_impl/db_impl.cc:825] [Post-GC] In-memory stats history size: 7430 bytes, slice count: 1
+2021/10/30-13:05:52.017047 7f11806ee700 [/db_impl/db_impl.cc:447] Shutdown: canceling all background work
+2021/10/30-13:05:52.017387 7f11806ee700 [/db_impl/db_impl.cc:625] Shutdown complete
