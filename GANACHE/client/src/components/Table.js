@@ -10,14 +10,12 @@ export default function Table({ Candidates }) {
         columns={[
           { title: "ID.", field: "id" },
           { title: "Nom", field: "name" },
-          { title: "Votes", field: "votes" },
         ]}
         data={
           query =>
             new Promise ( ( resolve ) => {
               resolve({
                 data: Candidates,
-                totalCount: Candidates.length,
               });
             })
         }

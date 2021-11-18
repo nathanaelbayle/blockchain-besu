@@ -79,7 +79,7 @@
 }
 
 .app .add_voter{
-  margin-top:30vh;
+  margin-top:10vh;
   margin-bottom:30vh;
   display: flex;
   flex-direction: column;
@@ -101,6 +101,33 @@
 }
 
 .app .add_voter form > TextField{
+  display: flex;
+  margin: 0 5px;
+}
+
+
+.app .create_vote{
+  margin-top:10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app .create_vote h3 {
+  font-size: 17px;
+}
+
+.app .create_vote form{
+  display: flex;
+  flex-direction: column;
+}
+.app .create_vote > button{
+  background-color: #48BF91;
+  color: white;
+  margin-top: 5px;
+}
+
+.app .create_vote form > TextField{
   display: flex;
   margin: 0 5px;
 }

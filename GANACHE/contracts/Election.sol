@@ -49,11 +49,6 @@ contract Election {
         uint indexed _proposal
     );
 
-    // add event
-    event addEvent (
-        address indexed _voter
-    );
- 
     /**
      * Constructeur d'un nouveau vote à choisir parmis les 'proposalNames'
      */
@@ -76,6 +71,7 @@ contract Election {
     function vote ( uint proposal ) public {
         Voter storage sender = voters[msg.sender];
         require( !sender.voted, "Vous avez deja vote.");
+        require( sender.weight != 0, "Vous n'avez pas le droit de vote.");
         sender.voted = true;
         sender.vote = proposal;
 
@@ -94,7 +90,6 @@ contract Election {
         require( voters[voter].weight == 0, "Le Voter a deja le droit de vote" );
         // Affectation du poid au voter
         voters[voter].weight = 1;
-        emit addEvent ( voter );
     }
 
     /**

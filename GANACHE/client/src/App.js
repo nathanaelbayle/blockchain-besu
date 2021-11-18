@@ -47,10 +47,10 @@ const App = () => {
   const [voterAddress, setVoterAddress] = useState("");
   const [leading, setLeading] = useState([]);
 
-  const loadWeb3 = async () =>{
+  const loadWeb3 = async () => {
     if (window.ethereum){
-    window.web3 = new Web3(window.ethereum)
-    await window.ethereum.enable()
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
     } else if (window.web3){
       window.web3 = new Web3(window.web3.currentProvider)
     } else{
@@ -98,7 +98,6 @@ const App = () => {
           });
       }
       setCandidates(arr);
-
       setLoading(false);
     } else {
       window.alert("the contract not deployed to detected network.");
@@ -125,16 +124,16 @@ const App = () => {
   }, [refresh]);
 
   const addVoter = async () => {
+    
     try {
       await Electioncontract.methods
         .giveRightToVote(voterAddress)
         .send({ from: account })
         .then((a) => {
-          let newvoter = a.event.addEvent.returnValues._voter;
-          console.log(newvoter);
+          console.log(a);
         });
     } catch ( err ) {
-        window.alert("Your are not authorised to perform this action");
+        window.alert( err.message);
     }
   };
 
@@ -150,17 +149,21 @@ const App = () => {
         });
       setVoted(!voted);
     } catch (err) {
-      window.alert("You already voted.");
+      window.alert(err.message);
     }
   };
 
   const showLeader = async() => {
     try {
       var winner = await Electioncontract.methods.winnerName().call();
-      setLeading({ name: winner.winnerName_, votes: winner.winningVoteCount_ });
-      setShowLead(!showlead);
+      if (winner.winningVoteCount_ == 0) {
+        window.alert("Aucun votes pour le moment");
+      } else {
+        setLeading({ name: winner.winnerName_, votes: winner.winningVoteCount_ });
+        setShowLead(!showlead);
+      }
     } catch (err) {
-      window.alert("Somthing happend.");
+      window.alert(err.message);
     }
   };
 
@@ -188,8 +191,7 @@ const App = () => {
               value={chooseid}
               onChange={handleChange}
             >
-              {
-                Candidates.length !== 0 ? (
+              {Candidates.length !== 0 ? (
                   Candidates.map((candidate) => (
                     <MenuItem key={candidate.name} value={candidate.id}>
                       {candidate.id}
@@ -260,7 +262,7 @@ const App = () => {
       ) : (
         content
       )}
-      {/* {content} */}
+      {}
     </div>
   );
 };
