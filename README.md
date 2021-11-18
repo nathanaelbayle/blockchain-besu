@@ -20,7 +20,7 @@ Fisrt go to the `node1` directory and run :
 
 Fisrt go to the `node2` directory and run :
 ```bash
-../besu/bin/besu --data-path=data --genesis-file=../genesis.json --bootnodes=enode://081519ebf93c0e2d7abc80763619c94a2afddce160f365fc765f1c4821d2ada2c1b5d7f3b438b4804b1428a4969eb3ea404c853adb76a28bccd8723724077ec8@127.0.0.1:30303 --p2p-port=30304 --rpc-http-enabled --rpc-http-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-http-port=8546
+../besu/bin/besu --data-path=data --genesis-file=../genesis.json --bootnodes=enode://cdea9cb71c43d1d14db651ada2dff0175f0b9daeb68dc45089bf43bf0516678b1261813c521a1fa10376a929cee552aa15fabe3062ac6b136eebed2b4a87cfa4@127.0.0.1:30303 --p2p-port=30304 --rpc-http-enabled --rpc-http-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-http-port=8546
 ```
 
 ## Starting Node 3
