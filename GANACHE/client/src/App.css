@@ -1,0 +1,106 @@
+.app{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app .do_vote > h3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px !important ;
+  font-weight:lighter;
+}
+
+.app .after_voting > h6{
+  font-size: 12px !important;
+}
+
+.app .showinguser_address > h4{
+  font-size: 18px !important;
+  font-weight: normal;
+}
+
+.app .lead_title > h4{
+  font-size: 14px !important;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.app .showinguser_address {
+  display: flex;
+  margin-bottom: 4px;
+  /* border-bottom: 2px; */
+}
+
+.app .news1{
+  height: 1px;
+  color: lightgray;
+  background-color: lightgray;
+  width:80%;
+  margin-top:2px;
+}
+.table{
+  display: flex;
+  width: 550.5;
+  justify-content: center;
+  margin-top: 12.5px;
+}
+
+.input_id{
+  top:0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input_id Button{
+  margin-top: 12px;
+  background-color: #48BF91;
+  color: white;
+
+}
+.app .lead_title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app .lead_title button{
+  background-color: #F70103;
+  color: white;
+  width: 50%;
+}
+
+.app .leader_details{
+  margin-top: 10px;
+}
+.app .footer{
+  position: fixed;
+ bottom: 0;
+ font-size: 20px;
+}
+
+.app .add_voter{
+  margin-top:30vh;
+  margin-bottom:30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app .add_voter h3 {
+  font-size: 17px;
+}
+
+.app .add_voter form{
+  display: flex;
+  flex-direction: column;
+}
+.app .add_voter > button{
+  background-color: #48BF91;
+  color: white;
+  margin-top: 5px;
+}
+
+.app .add_voter form > TextField{
+  display: flex;
+  margin: 0 5px;
+}
