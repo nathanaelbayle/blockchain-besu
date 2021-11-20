@@ -124,10 +124,22 @@ const App = () => {
   }, [refresh]);
 
   const addVoter = async () => {
-    
     try {
       await Electioncontract.methods
         .giveRightToVote(voterAddress)
+        .send({ from: account })
+        .then((a) => {
+          console.log(a);
+        });
+    } catch ( err ) {
+        window.alert( err.message);
+    }
+  };
+
+  const delegate = async () => {
+    try {
+      await Electioncontract.methods
+        .delegate(voterAddress)
         .send({ from: account })
         .then((a) => {
           console.log(a);
@@ -224,6 +236,25 @@ const App = () => {
           <div className="leader_details">
             <p>Name: {leading.name}</p>
             <p>Votes: {leading.votes}</p>
+          </div>
+        )}
+
+        {contractowner !== account && (
+          <div className="add_voter" id="add">
+            <h3>Enter the adress for delegate :</h3>
+            <form className="voter_form">
+              <TextField
+                id="outlined-basic"
+                label="Adress"
+                autoComplete="off"
+                variant="outlined"
+                value={voterAddress}
+                onChange={(e) => setVoterAddress(e.target.value)}
+              />
+            </form>
+            <Button variant="contained" onClick={delegate}>
+              SUBMIT
+            </Button>
           </div>
         )}
 
